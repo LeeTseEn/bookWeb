@@ -1,0 +1,28 @@
+@import "./reset";
+@import "./variable";
+@import "./commonStyle";
+@import "./flexbox";
+@import "./dataAttribute";
+@import "./container";
+
+
+body{
+    // background: url("../../public/img/bg_01.jpeg") no-repeat center center;
+    // background-size: cover;
+    background-color: $white;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 900;
+    color: $white;
+}
+
+h2{
+    font-size: 36px;
+}
+
+.container{
+    display: table;
+    padding: 5vh 5vw;
+}

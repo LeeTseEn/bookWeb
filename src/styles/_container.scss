@@ -1,0 +1,184 @@
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.home{
+  background: url("../../public/img/benner_01.jpeg") no-repeat center center;
+  background-size: cover;
+}
+
+.header{
+  @include flexBox(row);
+  @include flexAlign(center, center);
+  @include boxSizing;
+  min-height : 500px;
+}
+
+.menu{
+  @include flexBox(horizontal);
+  margin-left: 10vw;
+  padding: 10px 10px 0 10px;
+  li{ 
+      padding: 20px;
+      margin-left: 1vw;
+      color: $white;
+      font-weight: 700;
+      background-color: $darkBlue;
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 1.1rem;
+        font-size: 1.25rem;
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    }      
+  }
+}
+
+.page{
+  @include flexBox(row);
+  @include flexAlign(center,center);
+  @include boxSizing;
+  padding-top: 2vh;
+  width: 100%;
+  background: $darkBlue;
+}
+
+.book{
+  @include flexBox(row);
+  @include flexAlign(center,flex-start);
+  @include boxSizing;
+  width: 100%;
+    label{
+      color: $white;
+    }
+}
+
+.hot{
+  padding-top: 6vh;
+  color: $darkBlue;
+  background: $white;
+  b{
+    font-size: 24px;
+  }
+}
+
+.my-grid{
+  @include flexBox(row);
+  @include flexAlign(center, center);
+  @include boxSizing;
+  flex-wrap: wrap;
+  width: 1000px;
+  margin: auto;
+  padding: 1rem;
+  
+  .grid{
+    @include flexBox(row);
+    @include flexAlign(center, center);
+    @include boxSizing;
+    min-height: 100px;
+    height: 30vh;
+  }
+  
+  @for $i from 1 through 24{
+    &[data-row-split="#{$i}"]{
+      .grid{
+        width: calc(100% / #{$i});
+        @for $i from 1 through 5{
+          &:nth-child(#{$i}){ 
+            background: url("../../public/img/airHot_#{$i}.jpg") no-repeat center center;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.game {
+  @include flexBox(column);
+  @include flexAlign(center, center);
+  @include boxSizing;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: $white;
+}
+
+.game_panel {
+  @include flexBox(column);
+  @include boxSizing;
+  width: 1000px;
+  height: 420px;
+  border: 1px solid;
+  background: url("/img/pickup_bg.jpg") no-repeat center;
+  background-size: 100%;
+
+  ul.game_info {
+      @include flexBox(row);
+      @include flexAlign(center, flex-start);
+      @include boxSizing;
+      padding: 0.5rem;
+      height: 1.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+  }
+  .pickupBlock {
+      @include flexBox(column);
+      width: 100%;
+      height: 100%;
+  }
+
+  .btn_outer {
+      @include flexBox(row);
+      @include flexAlign(center, center);
+      width: 100%;
+      height: 80px;
+  }
+  .display {
+      @include flexBox(row);
+      @include flexAlign(center, center);
+      flex-wrap: wrap;
+      width: 100%;
+      flex: 1;
+  }
+  .card_obj {
+      @include flexBox(row);
+      @include flexAlign(center, center);
+      .card {
+          @include flexBox(row);
+          @include flexAlign(center, center);
+          width: 80px;
+          height: 80px;
+          border-radius: 4px;
+          background: rgba(0, 0, 0, 0.8);
+          color: #fff;
+      }
+  }
+}
+
+button.pickup {
+  border: none;
+  border-radius: 6px;
+  min-width: 120px;
+  height: 54px;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  color: #fff;
+  background-color: #0088ff;
+  cursor: pointer;
+}
+
+.test {
+  @include boxSizing;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: $white;
+}
+
