@@ -1,30 +1,52 @@
 <template>
-  <div class="restaurant page">
-    <el-form ref="form" :model="form" style="width: 1000px">
-      <div class="book">
-        <el-form-item label="大人">
-          <el-input v-model="form.name" placeholder="幾位大人" />
+  <div class="restaurant">
+    <div class="page">
+      <el-form ref="form" :model="form" style="width: 1000px">
+        <div class="book">
+          <el-form-item label="大人">
+            <el-input v-model="form.name" placeholder="幾位大人" />
+          </el-form-item>
+          <el-form-item label="小孩">
+            <el-input v-model="to.name" placeholder="幾位小孩" />
+          </el-form-item>
+          <el-form-item label="入住日期">
+            <el-col :span="11" style="width: 100%">
+              <el-date-picker v-model="form.date" type="date" placeholder="入住日期" style="width: 100%;" />
+            </el-col>
+          </el-form-item>
+          <el-form-item label="退房日期">
+            <el-col :span="11" style="width: 100%">
+              <el-date-picker v-model="to.date" type="date" placeholder="退房日期" style="width: 100%;" />
+            </el-col>
+          </el-form-item>
+        </div>
+        <el-form-item>
+          <el-button type="primary" @click="loadLastData">載入上一次填寫內容</el-button>
+          <el-button type="primary" @click="onSubmit">旅館查詢</el-button>
+          <el-button @click="handleReset(form);handleReset(to)">重置內容</el-button>
         </el-form-item>
-        <el-form-item label="小孩">
-          <el-input v-model="to.name" placeholder="幾位小孩" />
-        </el-form-item>
-        <el-form-item label="入住日期">
-          <el-col :span="11" style="width: 100%">
-            <el-date-picker v-model="form.date" type="date" placeholder="入住日期" style="width: 100%;" />
-          </el-col>
-        </el-form-item>
-        <el-form-item label="退房日期">
-          <el-col :span="11" style="width: 100%">
-            <el-date-picker v-model="to.date" type="date" placeholder="退房日期" style="width: 100%;" />
-          </el-col>
-        </el-form-item>
+      </el-form>
+    </div>
+    <div class="hot">
+      <b>熱門飯店</b>
+      <div class="my-grid wrap" data-row-split="5">
+        <div class="grid hotelHot">
+          <div class="content" />
+        </div>
+        <div class="grid hotelHot">
+          <div class="content" />
+        </div>
+        <div class="grid hotelHot">
+          <div class="content" />
+        </div>
+        <div class="grid hotelHot">
+          <div class="content" />
+        </div>
+        <div class="grid hotelHot">
+          <div class="content" />
+        </div>
       </div>
-      <el-form-item>
-        <el-button type="primary" @click="loadLastData">載入上一次填寫內容</el-button>
-        <el-button type="primary" @click="onSubmit">旅館查詢</el-button>
-        <el-button @click="handleReset(form);handleReset(to)">重置內容</el-button>
-      </el-form-item>
-    </el-form>
+    </div>
   </div>
 </template>
 

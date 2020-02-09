@@ -11,12 +11,12 @@
           </el-form-item>
           <el-form-item label="去程日期">
             <el-col :span="11" style="width: 100%">
-              <el-date-picker v-model="form.date" type="date" placeholder="日期" style="width: 100%;" />
+              <el-date-picker v-model="form.date" type="date" placeholder="日期" :picker-options="pickerOptions0" style="width: 100%;" />
             </el-col>
           </el-form-item>
           <el-form-item label="回程日期">
             <el-col :span="11" style="width: 100%">
-              <el-date-picker v-model="to.date" type="date" placeholder="回程日期" style="width: 100%;" />
+              <el-date-picker v-model="to.date" type="date" placeholder="回程日期" :picker-options="pickerOptions1" style="width: 100%;" />
             </el-col>
           </el-form-item>
         </div>
@@ -30,19 +30,19 @@
     <div class="hot">
       <b>熱門景點</b>
       <div class="my-grid wrap" data-row-split="5">
-        <div class="grid">
+        <div class="grid countryHot">
           <div class="content" />
         </div>
-        <div class="grid">
+        <div class="grid countryHot">
           <div class="content" />
         </div>
-        <div class="grid">
+        <div class="grid countryHot">
           <div class="content" />
         </div>
-        <div class="grid">
+        <div class="grid countryHot">
           <div class="content" />
         </div>
-        <div class="grid">
+        <div class="grid countryHot">
           <div class="content" />
         </div>
       </div>
